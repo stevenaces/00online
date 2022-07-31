@@ -36,21 +36,21 @@ class Dep {
 
 export function effectWatch(effect) {
   currentEffect = effect;   // 保存依赖
-  effect()
+  effect()    // 在执行这里的时候，就已经收集依赖了
   currentEffect = null;
 }
 
-// const dep = new Dep(10)
+// const a = new Dep(10)
 // let b;
 
 // effectWatch(() => {
-//   b = dep.value + 10;
+//   b = a.value + 10;
 //   console.log('b:', b);
 // })
 
 // // 值发生变化
-// dep.value = 20;
-// dep.notice()
+// a.value = 20;
+// a.notice()
 
 /**
  * 2. reactive
